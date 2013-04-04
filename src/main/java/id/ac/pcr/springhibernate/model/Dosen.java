@@ -1,6 +1,14 @@
 package id.ac.pcr.springhibernate.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
@@ -10,7 +18,7 @@ public class Dosen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dosen_id")
-    private int id;
+    private Long id;
     @Column(name = "niy", unique = true)
     private String niy;
     @Column(name = "nama")
@@ -33,11 +41,11 @@ public class Dosen {
         this.createdAt = createdAt;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

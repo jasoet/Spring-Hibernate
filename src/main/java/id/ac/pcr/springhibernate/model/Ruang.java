@@ -23,17 +23,17 @@ public class Ruang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ruang_id")
-    private int id;
+    private Long id;
     @Column(name = "nama")
     private String nama;
     @Column(name = "keterangan")
     private String keterangan;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -19,7 +19,7 @@
     <!-- ini diperlukan kalau kita mapping DispatcherServlet ke / -->
     <!-- sehingga tetap bisa mengakses folder selain WEB-INF, misalnya img,
          css, js -->
-    <mvc:default-servlet-handler/>
+    <mvc:default-servlet-handler />
 
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

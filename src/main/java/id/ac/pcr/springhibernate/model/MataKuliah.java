@@ -26,7 +26,7 @@ public class MataKuliah {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mahasiswa_id")
-    private int id;
+    private Long id;
     @Column(name = "kode")
     private String kode;
     @Column(name = "nama")
@@ -44,11 +44,11 @@ public class MataKuliah {
         this.dosen = dosen;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

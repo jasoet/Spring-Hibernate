@@ -17,11 +17,12 @@ import java.util.List;
  */
 
 @Service
+@Transactional
 public class DosenService {
     @PersistenceContext
     protected EntityManager entityManager;
 
-    @Transactional
+
     public void save(Dosen dosen) {
         entityManager.persist(dosen);
     }
