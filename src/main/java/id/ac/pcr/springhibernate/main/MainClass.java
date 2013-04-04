@@ -3,6 +3,7 @@ package id.ac.pcr.springhibernate.main;
 import id.ac.pcr.springhibernate.model.Dosen;
 import id.ac.pcr.springhibernate.model.Mahasiswa;
 import id.ac.pcr.springhibernate.provider.ApplicationContextProvider;
+import id.ac.pcr.springhibernate.repository.DosenRepository;
 import id.ac.pcr.springhibernate.service.DosenService;
 import id.ac.pcr.springhibernate.service.PendaftaranService;
 import org.springframework.context.ApplicationContext;
@@ -14,19 +15,15 @@ public class MainClass {
     public static void main(String[] args) {
         ApplicationContext acp = ApplicationContextProvider.getInstance().getApplicationContext();
         PendaftaranService ps = acp.getBean("pendaftaranService", PendaftaranService.class);
-        DosenService ds = acp.getBean("dosenService", DosenService.class);
-
-        Mahasiswa m = new Mahasiswa();
-        m.setNama("Jasoet");
-        m.setNim("717171771");
-
-        ps.insertMahasiswa(m);
+        DosenRepository dp = acp.getBean("dosenRepository", DosenRepository.class);
 
         Dosen d = new Dosen();
         d.setNiy("009");
         d.setNama("Deny");
 
-        ds.save(d);
+        dp.save(d);
+
+        List<Dosen> dosenList = (List<Dosen>) dp.findAll();
 
 
         List<Mahasiswa> lm = ps.getAllMahasiswa();
