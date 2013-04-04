@@ -34,8 +34,7 @@ public class DosenController {
 
     @RequestMapping(value = "/dosen/{id}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable("id") Long id) {
-        Dosen data = dosenService.findDosen(id);
-        dosenService.delete(data);
+        dosenService.delete(id);
         return "redirect:/dosen";
     }
 

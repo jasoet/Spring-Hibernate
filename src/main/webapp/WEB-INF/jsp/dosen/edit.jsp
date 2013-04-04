@@ -6,20 +6,19 @@
 
     <form:form action="${dosen_url}" method="PUT" modelAttribute="dosen" id="dosenForm">
         <form:hidden path="id" id="id"/>
-        <input type="hidden" name="user" value="${dosen.user.id}"/>
         <div class="blocksection">
             <div class="blockcontent">
                 <h3>Edit Dosen </h3>
                 <dl class="form-text">
                     <dt>
-                        <label for="nip">NIP :</label>
+                        <label for="niy">NIP :</label>
                     </dt>
                     <dd>
 
-                        <form:input path="nip" id="nip" disabled="true"/>
+                        <form:input path="niy" id="niy" disabled="true"/>
 
                         <form:errors delimiter="&lt;p/&gt;" cssClass="boxinfo error"
-                                     path="nip"/>
+                                     path="niy"/>
                         <p class="description">Required.</p>
                     </dd>
                 </dl>
@@ -33,18 +32,6 @@
 
                         <form:errors delimiter="&lt;p/&gt;" cssClass="boxinfo error"
                                      path="nama"/>
-                        <p class="description">Required.</p>
-                    </dd>
-                </dl>
-                <dl class="form-select">
-                    <dt>
-                        <label for="minat">Minat :</label>
-                    </dt>
-                    <dd>
-                        <form:select path="minat" items="${minatData}" id="minat"/>
-
-                        <form:errors delimiter="&lt;p/&gt;" cssClass="boxinfo error"
-                                     path="minat"/>
                         <p class="description">Required.</p>
                     </dd>
                 </dl>

@@ -10,14 +10,14 @@
             <h3>Insert New Dosen </h3>
             <dl class="form-text">
                 <dt>
-                    <label for="nip">NIP :</label>
+                    <label for="niy">NIP :</label>
                 </dt>
                 <dd>
 
-                    <form:input path="nip" id="nip"/>
+                    <form:input path="niy" id="niy"/>
 
                     <form:errors delimiter="&lt;p/&gt;" cssClass="boxinfo error"
-                                 path="nip"/>
+                                 path="niy"/>
                     <p class="description">Required.</p>
                 </dd>
             </dl>

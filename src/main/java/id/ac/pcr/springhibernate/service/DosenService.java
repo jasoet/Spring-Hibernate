@@ -17,20 +17,29 @@ import java.util.List;
  */
 
 @Service
-@Transactional
 public class DosenService {
     @PersistenceContext
     protected EntityManager entityManager;
 
 
+    @Transactional
     public void save(Dosen dosen) {
+        if (dosen.getId() != null) {
+            Dosen updated = entityManager.find(Dosen.class, dosen.getId());
+            updated.setNiy(dosen.getNiy());
+            updated.setNama(dosen.getNama());
+            dosen = updated;
+        }
         entityManager.persist(dosen);
     }
 
 
-    public void delete(Dosen dosen) {
-        if (dosen != null) {
-            entityManager.remove(dosen);
+    @Transactional
+    public void delete(Long id) {
+        if (id != null) {
+            Dosen deleted = entityManager.find(Dosen.class, id);
+
+            entityManager.remove(deleted);
         }
 
     }
