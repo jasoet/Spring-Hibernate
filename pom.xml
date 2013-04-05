@@ -9,7 +9,6 @@
     <name>Spring Hibernate Template</name>
 
 
-
     <properties>
         <!-- versi library dan framework -->
         <org.springframework.version>3.2.2.RELEASE</org.springframework.version>
@@ -52,16 +51,7 @@
             <artifactId>dbunit</artifactId>
             <version>${dbunit.version}</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>junit</artifactId>
-                    <groupId>junit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>slf4j-api</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
+
 
         </dependency>
 
@@ -75,48 +65,13 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${org.springframework.data.jpa.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-core</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>slf4j-api</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-tx</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-orm</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>jcl-over-slf4j</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
+
 
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${org.hibernate.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>hibernate-jpa-2.0-api</artifactId>
-                    <groupId>org.hibernate.javax.persistence</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>jboss-logging</artifactId>
-                    <groupId>org.jboss.logging</groupId>
-                </exclusion>
-            </exclusions>
 
 
         </dependency>
@@ -125,18 +80,7 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${org.hibernate.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>hibernate-jpa-2.0-api</artifactId>
-                    <groupId>org.hibernate.javax.persistence</groupId>
-                </exclusion>
-            </exclusions>
 
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.6.4</version>
         </dependency>
 
 
@@ -175,6 +119,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>${org.springframework.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
 
@@ -192,12 +142,6 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${org.hibernate.validator.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jboss-logging</artifactId>
-                    <groupId>org.jboss.logging</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <artifactId>spring-expression</artifactId>
@@ -213,29 +157,6 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
             <version>${org.springframework.security.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-expression</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-
-                <exclusion>
-                    <artifactId>spring-core</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-aop</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-context</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
 
         </dependency>
 
@@ -265,12 +186,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-expression</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
+
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -288,16 +204,7 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>${net.sf.jasperreport.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jackson-core</artifactId>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>jackson-databind</artifactId>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                </exclusion>
-            </exclusions>
+
         </dependency>
 
 
@@ -305,40 +212,6 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
             <version>${org.springframework.security.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-expression</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-core</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-context</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-aop</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-web</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-tx</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-jdbc</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
 
         </dependency>
 
@@ -348,11 +221,7 @@
             <version>${org.springframework.security.version}</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-context</artifactId>
+                    <artifactId>spring-core</artifactId>
                     <groupId>org.springframework</groupId>
                 </exclusion>
                 <exclusion>
@@ -360,11 +229,18 @@
                     <groupId>org.springframework</groupId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>spring-core</artifactId>
+                    <artifactId>spring-security-core</artifactId>
+                    <groupId>org.springframework.security</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
                     <groupId>org.springframework</groupId>
                 </exclusion>
             </exclusions>
-
 
         </dependency>
 
@@ -399,40 +275,6 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
             <version>${org.springframework.security.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-expression</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-context</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-core</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-web</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-aop</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-tx</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-jdbc</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
 
 
         </dependency>
@@ -447,12 +289,6 @@
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-el</artifactId>
             <version>${tiles.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jcl-over-slf4j</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
 
         </dependency>
         <dependency>
@@ -460,24 +296,7 @@
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.dbunit</groupId>
-            <artifactId>dbunit</artifactId>
-            <version>${dbunit.version}</version>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>junit</artifactId>
-                    <groupId>junit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>slf4j-api</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
 
-
-        </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -490,12 +309,6 @@
             <version>${org.aspectj.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${org.springframework.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
