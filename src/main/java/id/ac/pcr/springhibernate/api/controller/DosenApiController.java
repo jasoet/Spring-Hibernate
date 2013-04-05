@@ -46,7 +46,7 @@ public class DosenApiController {
     @Autowired
     private DosenRepository dosenRepository;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/",method = RequestMethod.GET)
     @ResponseBody
     public Page<Dosen> getAll(ModelMap modelMap, Pageable pageable) {
         return dosenRepository.findAll(pageable);
