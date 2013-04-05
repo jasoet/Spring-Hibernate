@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriTemplate;
 
 import javax.persistence.NoResultException;
+import javax.print.attribute.standard.PageRanges;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -64,7 +66,7 @@ public class DosenApiController {
     }
 
 
-    @RequestMapping("/{id}")
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     @ResponseBody
     public Dosen findById(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
         Dosen o = dosenRepository.findOne(id);
@@ -85,6 +87,8 @@ public class DosenApiController {
 
         o.setNiy(a.getNiy());
         o.setNama(a.getNama());
+
+        dosenRepository.save(o);
 
         String requestUrl = request.getRequestURL().toString();
         URI uri = new UriTemplate("{requestUrl}{id}").expand(requestUrl, a.getId());
