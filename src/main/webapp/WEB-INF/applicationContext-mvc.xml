@@ -10,16 +10,23 @@
 
 
     <context:component-scan base-package="id.ac.pcr.springhibernate.web.controller"/>
+    <context:component-scan base-package="id.ac.pcr.springhibernate.api.controller"/>
 
 
     <!-- Configures the @Controller programming model -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <!--Menambahkan Support untuk Pageable di Controller-->
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.data.web.PageableArgumentResolver"/>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+
 
     <!-- mengganti default servletnya Tomcat dan Jetty -->
     <!-- ini diperlukan kalau kita mapping DispatcherServlet ke / -->
     <!-- sehingga tetap bisa mengakses folder selain WEB-INF, misalnya img,
          css, js -->
-    <mvc:default-servlet-handler />
+    <mvc:default-servlet-handler/>
 
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
